@@ -30,11 +30,15 @@
         <Label Grid.Column="0" Grid.Row="2" Content="水印图片:" Height="28" Width="75" Name="labelWater" HorizontalContentAlignment="Right" HorizontalAlignment="Right" VerticalAlignment="Center" />
         <TextBox Name="waterPath"  Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="4" VerticalAlignment="Center"></TextBox>
         <Button Grid.Column="6" Grid.Row="2" Content="选择目录" Height="23" Width="75" HorizontalAlignment="Center" VerticalAlignment="Center" Click="Button_Click_WaterPath" ></Button>
-
+        <Label Grid.Column="6" Grid.Row="3" Content="0%" Height="28" Width="75" Name="labelpro" HorizontalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" />
+        <StackPanel Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="4" Name="myProgressBar" VerticalAlignment="Center">
+            <ProgressBar Name="progressbar"  HorizontalAlignment="Center"   VerticalAlignment="Center" Height="20" Width="{Binding Path=ActualWidth,ElementName=myProgressBar}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        </StackPanel>
         <StackPanel Grid.Column="0" Grid.Row="10" Grid.ColumnSpan="6" Name="myPanelText">
             <TextBox Width="{Binding Path=ActualWidth,ElementName=myPanelText}" 
                  Height="{Binding Path=ActualHeight,ElementName=myPanelText}"
                     Name="textBox1"   HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Auto"  />
         </StackPanel>
-        </Grid>
+        
+    </Grid>
 </Window>

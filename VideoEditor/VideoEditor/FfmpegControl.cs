@@ -54,7 +54,8 @@ namespace VideoEditor
             {
                 //调用ffmpeg开始处理命令
                 var proc = Process.Start(oInfo);
-
+                proc.EnableRaisingEvents = true;
+                proc.Exited += new EventHandler(Proc_Exited);
                 //proc.WaitForExit();
 
 
@@ -67,8 +68,8 @@ namespace VideoEditor
                 //关闭处理程序
                 //proc.Close();
 
-                proc.Close();//关闭进程
-                proc.Dispose();//释放资源
+                //proc.Close();//关闭进程
+                //proc.Dispose();//释放资源
             }
             catch (Exception)
             {
@@ -84,6 +85,11 @@ namespace VideoEditor
                 }
             }
             return output;
+        }
+
+        private void Proc_Exited(object sender, EventArgs e)
+        {
+            System.Windows.MessageBox.Show("完成");
         }
     }
 }
